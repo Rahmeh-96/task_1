@@ -1,5 +1,25 @@
-import 'package:task_1/task_1.dart' as task_1;
+void main() {
+  print(calculate(num1: 5, num2: 6, operation: '+'));
+  print(calculate(num1: 3.1, num2: 6, operation: '-'));
+  print(calculate(num1: 9, num2: 2, operation: '*'));
+  print(calculate(num1: 10.6, num2: 6, operation: '/'));
+  print(calculate(num1: 9, num2: 6, operation: '%'));
+  print(calculate());
+}
 
-void main(List<String> arguments) {
-  print('Hello world: ${task_1.calculate()}!');
+double calculate({double num1 = 0, double num2 = 0, String? operation}) {
+  switch (operation) {
+    case '+':
+      return num1 + num2;
+    case '-':
+      return num1 - num2;
+    case '*':
+      return num1 * num2;
+    case '/':
+      return num2 != 0 ? num1 / num2 : double.infinity;
+    case '%':
+      return num2 != 0 ? num1 % num2 : double.nan;
+    default:
+      return num1 + num2;
+  }
 }
